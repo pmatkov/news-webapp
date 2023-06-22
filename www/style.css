@@ -1,0 +1,658 @@
+
+/******************************
+        main sections
+******************************/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: scroll;
+}
+
+header, footer {
+    background-color:whitesmoke;
+}
+
+header {
+    padding: 0;
+}
+
+header h1 {
+    font-family: Garamond, Georgia, serif;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+header hr {
+    border: none;
+    background-color: gainsboro;
+    height: 4px;
+}
+
+footer {
+    padding: 25px 0;
+
+}
+
+footer p {
+    text-align: center;
+}
+
+.container-outside {
+    display: flex;
+
+}
+
+.central {
+    width: 52%;
+    border-left: 4px solid gainsboro;
+}
+
+header .central {
+    padding-bottom: 5px;
+}
+
+
+.sidebar {
+    width: 24%;
+
+}
+
+
+/*******************************
+        sub sections
+*******************************/
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+main .central {
+    padding-bottom: 50px;
+}
+
+article {
+    width: 33.33%;
+    background-color: white;
+}
+
+#single-article {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#single-article header {
+    all: initial;
+}
+
+#single-article h1 {
+    margin: 10px 0;
+    font-family: initial;
+    font-size: 1.8em;
+    letter-spacing: 0.2px;
+    text-align: initial;
+}
+
+#single-article header p {
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+
+#single-article header p#date {
+    color:black;
+    font-size: 1em;
+}
+
+
+section {
+    padding: 50px 20px;
+
+}
+
+section hr {
+    width: 105%;
+    height: 2px;
+    background-color: lightgray;
+    border-top: 1px solid whitesmoke;
+    position: relative;
+    left: -50px;
+}
+
+section h1 {
+    font-size: 1.2em;
+}
+
+p {
+    color:rgb(80, 80, 80);
+    font-size: 1.2em;
+}
+
+p.color {
+    color: dodgerblue;
+    font-size: 1em;
+}
+
+p.link {
+    font-size: 1em;
+}
+
+p.link a {
+    color: black;
+    text-decoration: 2px underline black;
+    text-underline-position: under;
+}
+
+p.link a:hover {
+    text-decoration-color: silver;
+}
+
+p.level {
+    font-size: 1em;
+    color: black;
+}
+
+span.level {
+    color: gray;
+}
+
+
+/*******************************
+            navigation
+*******************************/
+
+.container-outside-nav, .container-inside-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-login {
+    margin-left: 40px;
+}
+
+nav {
+    max-width: 70%;
+    margin: 0 auto; 
+    font-family: Georgia, Garamond, serif;
+    white-space: nowrap;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 5px;
+}
+
+nav a:link, nav a:visited, #loggedin {
+    padding: 5px 10px; 
+    letter-spacing: 0.2px;
+    text-align: center;
+    text-shadow: 0 0 1px gainsboro;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    display: block;
+}
+
+nav a:hover, #selected {
+    text-decoration: 2px underline dodgerblue;
+    text-underline-position: under;
+}
+
+.container-login a:hover {
+    text-decoration: none;
+}
+
+a.register:link, a.register:visited, button.logout {
+    border: 1px solid rgb(140, 140, 140);
+    border-radius: 5px;
+} 
+
+a.register:hover, button.logout:hover {
+    background-color: gainsboro;
+    text-decoration: none;
+}
+
+a.login:hover, a#selected-login {
+    text-decoration: 2px underline rgb(150, 150, 150);
+    text-underline-position: under;
+}
+
+button.logout {
+    padding: 5px 10px; 
+    font-family: Georgia, Garamond, serif;
+    font-size: 1em;
+    letter-spacing: 0.2px;
+    text-align: center;
+    text-shadow: 0 0 1px gainsboro;
+    cursor: pointer;
+}
+
+
+#loggedin span {
+    color: rgb(150, 150, 150);
+}
+
+
+/*******************************
+            images
+*******************************/
+
+figure {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#single-article figure {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption a {
+    font-size: 1.1em;
+    color: black;
+    text-decoration: none;
+}
+
+figcaption a:hover {
+    text-decoration: 2px underline royalblue;
+    text-underline-position: under;
+}
+
+td img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+#selected-caption {
+    text-align: right;
+}
+
+/*******************************
+        form - general
+*******************************/
+
+.form-item {
+    margin: 10px 0;   
+}
+
+.article-form {
+    width: 300px;
+    margin: 10px 0;
+}
+
+.login-form {
+    width: 150px;
+    margin: 10px 0;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    max-width: 150px;
+    color: transparent;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
+
+#container-outside-img {
+    display: flex;
+}
+
+#container-inside-img {
+    max-width: 150px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+form figure img {
+    width: 80px;
+    padding-bottom: 5px;
+
+}
+
+.button-group {
+    margin: 20px 0;
+    
+}
+
+.placeholder {
+    color: red;
+}
+
+.form-button, input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 4px 8px;
+    background-color: whitesmoke;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 5px;
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-button:hover, input[type="file"]::file-selector-button:hover {
+    background-color: rgb(220, 220, 220);
+    border: 1px solid rgb(130, 130, 130);
+ 
+}
+
+.container-admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ xx       article form      xx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+#summary {
+    height: 100px;
+}
+
+#contents {
+    height: 200px;
+}
+
+
+#image {
+    margin: 10px 0;
+    
+}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  xx      login form        xx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+.advice {
+    margin-top: 40px;
+    font-size: 1em;
+}
+
+.advice a {
+    color: black;
+    text-decoration: 2px underline black;
+    text-underline-position: under;
+}
+
+.advice a:hover {
+    text-decoration-color: silver;
+}
+
+
+
+/*******************************
+            table
+*******************************/
+
+table, th, td {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+th, td {
+    max-width: fit-content;
+}
+
+th {
+    border-width: 2px;
+    text-align: center;
+}
+
+td {
+    text-align: left;
+}
+
+.wide-col {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.narrow-col {
+    max-width: min-content;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.table-image {
+    max-width: 150px;
+}
+
+.icon-center {
+    text-align: center;
+}
+
+
+div.clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+button.icon {
+    margin: 0 auto;
+    padding: 2px 4px;
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+
+}
+
+button.icon:hover {
+    background-color: rgb(212, 212, 212);
+
+}
+
+button .fas {
+    font-size: 1.2em;
+    color: black;
+
+}
+
+/*******************************
+           media rules
+*******************************/
+
+
+@media (min-width: 1850px) {
+
+    /* .narrow-col {
+        min-width: 80px;
+    } */
+   
+}
+
+@media (max-width: 1650px) {
+
+    .table-image {
+        max-width: 50px;
+    }
+
+    .central {
+        width: 60%;
+
+    }
+    
+    .sidebar {
+        width: 20%;
+    }
+    
+}
+
+@media (max-width: 1430px) {
+
+    /* .wide-col {
+        max-width: 150px;
+
+    } */
+
+    .container-outside-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-login {
+        margin-top: 0;
+    }
+    
+}
+
+@media (max-width: 1050px) {
+
+    .container, .container-outside-nav, .container-inside-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-login {
+        margin-top: 0;
+        margin-left: initial;
+        flex-direction: row;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    article {
+        width: 100%;
+        margin: 25px 15px;
+    } 
+    
+    figure {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    figcaption {
+        font-size: 0.9em;
+    }
+
+    nav a {
+        padding: 5px 0; 
+    }
+
+    #selected {
+
+        text-shadow: none;
+    }
+
+    #single-article h1  {
+         font-size: 1.7em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+
+    th, td, .wide-col {
+        max-width: initial;
+    }
+
+    button .fas {
+        font-size: 1em;
+    }
+
+
+}
+
+@media (max-width: 700px) {
+
+    .central {
+        width: 66%;
+
+    }
+
+    .sidebar {
+        width: 17%;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    figure {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #single-article h1 {
+        font-size: 1.5em;
+    }
+
+    .article-form, .login-form {
+        max-width: 260px;
+    }
+
+    button .fas {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    #container-outside-img {
+        justify-content: space-between;
+    
+    }
+    
+    form figcaption {
+        word-wrap: break-word;
+        text-align: right;
+    }
+
+    .central {
+        width: 68%;
+
+    }
+
+    .sidebar {
+        width: 16%;
+    }
+
+}
