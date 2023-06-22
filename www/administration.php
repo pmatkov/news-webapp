@@ -75,12 +75,12 @@
                                         $alt_text = ucwords(str_replace("-"," ", pathinfo($image, PATHINFO_FILENAME)));
         
                                         echo "<tr>";
-                                        echo "<td><div class=\"clamp\">" . $i++ . "</div></td>";
-                                        echo "<td class=\"wide\"><div class=\"clamp\">$title</div></td>";
-                                        echo "<td class=\"wide\"><div class=\"clamp\">$summary</div></td>";
+                                        echo "<td class=\"narrow-col center\">" . $i++ . "</td>";
+                                        echo "<td class=\"wide-col\"><div class=\"clamp\">$title</div></td>";
+                                        echo "<td class=\"wide-col\"><div class=\"clamp\">$summary</div></td>";
                                         echo "<td class=\"table-image\"><img src=\"images/$image\" alt=\"$alt_text\"></td>";
                                         echo "<td>" . ucfirst($category) . "</td>";
-                                        echo "<td class=\"icon-center\">" . (($archived == 1) ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>') . "</td>";
+                                        echo "<td class=\"center\">" . (($archived == 1) ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>') . "</td>";
                                         echo "<td>" . date("d.m.Y.", strtotime($article_date)) . "</td>";
                                         echo "<td class=\"narrow-col\"><button class=\"icon\" onclick=\"edit_entry('edit', $id)\">
                                         <i class=\"fas fa-edit\"></i></button></td>";
@@ -108,12 +108,12 @@
                         }
 
                         else if (isset($_SESSION['user'], $_SESSION['level']) && $_SESSION['level'] !== 1) {
-                            echo    "<p class=\"color\">You don't have sufficient permission to access this page.";
+                            echo "<p class=\"color\">You don't have sufficient permission to access this page.";
 
-                            echo    "<p class=\"level\">Current authorization level: <span class=\"level\">[" .  $_SESSION['level'] . "]</span> / required <span class=\"level\">[1]</span></p>";
+                            echo "<p class=\"level\">Current authorization level: <span class=\"level\">[" .  $_SESSION['level'] . "]</span> / required <span class=\"level\">[1]</span></p>";
                         }
                         else
-                            echo    "<p class=\"color\">Registration is required before accessing this page.</p>
+                            echo "<p class=\"color\">Registration is required before accessing this page.</p>
                             <p class=\"link\"><a href=\"login.php\">Sign in</a> or <a href=\"registration.php\">register</a></p>";
 
                     ?>

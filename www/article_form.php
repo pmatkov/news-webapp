@@ -1,94 +1,94 @@
 <?php
 
-session_start();
+    session_start();
 
-include('includes/db_utils.php');
+    include('includes/db_utils.php');
 
-$title = "";
-$summary = "";
-$contents = "";
-$category = "";
-$archived = "";
+    $title = "";
+    $summary = "";
+    $contents = "";
+    $category = "";
+    $archived = "";
 
-$mode = "";
+    $mode = "";
 
-if (isset($_SESSION['mode'], $_SESSION['id'])) {
+    if (isset($_SESSION['mode'], $_SESSION['id'])) {
 
-    $mode = $_SESSION['mode'];
-    $id = $_SESSION['id'];
+        $mode = $_SESSION['mode'];
+        $id = $_SESSION['id'];
 
-    $row = get_single_article($id);
+        $row = get_single_article($id);
 
-    $title = $row["title"];
-    $summary = $row["summary"];
-    $contents = $row["contents"];
-    $fname = $row["image"];
-    $category = $row["category"];
-    $archived = $row["archived"];
+        $title = $row["title"];
+        $summary = $row["summary"];
+        $contents = $row["contents"];
+        $fname = $row["image"];
+        $category = $row["category"];
+        $archived = $row["archived"];
 
-}
-
-if (isset($_POST['submit'])) {
-
-    $dbc = db_connect();
-
-    $title =  $_POST['title'];
-    $summary = $_POST['summary'];
-    $contents = $_POST['contents'];
-    $category = $_POST['category'];
-    $archived = isset($_POST['archived']) ? 1 : 0;
-    $article_date = date('Y-m-d');
-
-    if (is_uploaded_file($_FILES['image']['tmp_name']))  {
-               
-        $image = $_FILES['image'];
-        $dir = "images/";
-
-        $fname = $_FILES['image']['name'];
-        $path = $dir . $fname;
-
-        if (getimagesize($_FILES['image']['tmp_name']) === false) 
-            $_SESSION['message'] = "Uploaded file is not an image.";
-        else 
-            move_uploaded_file($image["tmp_name"], $path);  
     }
 
-    $stmt = mysqli_stmt_init($dbc);
+    if (isset($_POST['submit'])) {
 
-    if ($mode === 'edit') 
-        $query = "UPDATE news SET title = ?, summary = ?, contents = ?, image = ?, category = ?, archived = ? WHERE id = ?";
-    else 
-        $query = "INSERT INTO news (title, summary, contents, image, category, archived, article_date) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        $dbc = db_connect();
 
-    if (mysqli_stmt_prepare($stmt, $query)) {
+        $title =  $_POST['title'];
+        $summary = $_POST['summary'];
+        $contents = $_POST['contents'];
+        $category = $_POST['category'];
+        $archived = isset($_POST['archived']) ? 1 : 0;
+        $article_date = date('Y-m-d');
 
-        $types = ($mode == 'edit') ? "sssssii" : "sssssis";
-        $lastarg = ($mode == 'edit') ? $id : $article_date;
+        if (is_uploaded_file($_FILES['image']['tmp_name']))  {
+                
+            $image = $_FILES['image'];
+            $dir = "images/";
 
-        mysqli_stmt_bind_param($stmt, $types, $title, $summary, $contents, $fname, $category, $archived, $lastarg);
-        
-        $result = mysqli_stmt_execute($stmt);
+            $fname = $_FILES['image']['name'];
+            $path = $dir . $fname;
 
-        mysqli_stmt_close($stmt);
-    }
-    
-    if ($result) {
+            if (getimagesize($_FILES['image']['tmp_name']) === false) 
+                $_SESSION['message'] = "Uploaded file is not an image.";
+            else 
+                move_uploaded_file($image["tmp_name"], $path);  
+        }
+
+        $stmt = mysqli_stmt_init($dbc);
 
         if ($mode === 'edit') 
-            $_SESSION['message'] = "Article successfully updated.";
+            $query = "UPDATE news SET title = ?, summary = ?, contents = ?, image = ?, category = ?, archived = ? WHERE id = ?";
         else 
-            $_SESSION['message'] = "Article successfully added.";  
+            $query = "INSERT INTO news (title, summary, contents, image, category, archived, article_date) VALUES(?, ?, ?, ?, ?, ?, ?)";
+
+        if (mysqli_stmt_prepare($stmt, $query)) {
+
+            $types = ($mode == 'edit') ? "sssssii" : "sssssis";
+            $lastarg = ($mode == 'edit') ? $id : $article_date;
+
+            mysqli_stmt_bind_param($stmt, $types, $title, $summary, $contents, $fname, $category, $archived, $lastarg);
+            
+            $result = mysqli_stmt_execute($stmt);
+
+            mysqli_stmt_close($stmt);
+        }
         
-    } 
-    else 
-        $_SESSION['message'] = "Error saving article.";
-                                            
-    mysqli_close($dbc);
+        if ($result) {
 
-    header("Location:" . $_SERVER['REQUEST_URI'], true, 303);
-    exit();
+            if ($mode === 'edit') 
+                $_SESSION['message'] = "Article successfully updated.";
+            else 
+                $_SESSION['message'] = "Article successfully added.";  
+            
+        } 
+        else 
+            $_SESSION['message'] = "Error saving article.";
+                                                
+        mysqli_close($dbc);
 
-}
+        header("Location:" . $_SERVER['REQUEST_URI'], true, 303);
+        exit();
+
+    }
 ?>  
 <!DOCTYPE html>
 <html lang="en">

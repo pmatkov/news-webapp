@@ -72,11 +72,11 @@
 
                         if (!isset($_SESSION['user'])) {
 
-                            echo    "<header>
-                                        <p>Sign in</p><br>
-                                    </header>";
+                            echo "<header>
+                                    <p>Sign in</p><br>
+                                  </header>";
 
-                            echo    "<form action=\"" . $_SERVER['PHP_SELF'] . "\" method=\"POST\" enctype=\"multipart/form-data\">
+                            echo  "<form action=\"" . $_SERVER['PHP_SELF'] . "\" method=\"POST\" enctype=\"multipart/form-data\">
                                         <div class=\"form-item\">
                                             <label for=\"user\">Username:</label><br>
                                             <input type=\"text\" name=\"username\" id=\"user\" class=\"login-form\"><br>

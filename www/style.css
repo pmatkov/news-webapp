@@ -108,7 +108,6 @@ article {
     font-size: 1em;
 }
 
-
 section {
     padding: 50px 20px;
 
@@ -320,8 +319,6 @@ input[type="file"]::file-selector-button {
     border-radius: 5px;
 }
 
-
-
 #container-outside-img {
     display: flex;
 }
@@ -415,7 +412,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 }
 
 
-
 /*******************************
             table
 *******************************/
@@ -459,7 +455,7 @@ td {
     max-width: 150px;
 }
 
-.icon-center {
+.center {
     text-align: center;
 }
 
@@ -497,14 +493,6 @@ button .fas {
 *******************************/
 
 
-@media (min-width: 1850px) {
-
-    /* .narrow-col {
-        min-width: 80px;
-    } */
-   
-}
-
 @media (max-width: 1650px) {
 
     .table-image {
@@ -523,11 +511,6 @@ button .fas {
 }
 
 @media (max-width: 1430px) {
-
-    /* .wide-col {
-        max-width: 150px;
-
-    } */
 
     .container-outside-nav {
         flex-direction: column;
@@ -596,7 +579,6 @@ button .fas {
     button .fas {
         font-size: 1em;
     }
-
 
 }
 

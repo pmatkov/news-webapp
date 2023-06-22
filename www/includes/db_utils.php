@@ -112,5 +112,4 @@
             $_SESSION['delete_status'] = "Article deletion failed";
 
     }
-
 ?>

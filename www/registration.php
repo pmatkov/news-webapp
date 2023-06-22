@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     if (isset($_POST['submit'])) {
@@ -82,38 +83,38 @@
 
                         echo "<header>
                                 <p>Registration</p><br>
-                            </header>
-                            <form action=\"" . $_SERVER['PHP_SELF'] . "\" method=\"POST\" enctype=\"multipart/form-data\">
-                                <div class=\"form-item\">
-                                    <label for=\"fname\">Name:</label><br>
-                                    <input type=\"text\" name=\"name\" id=\"fname\" class=\"login-form\"><br>
-                                    <span id=\"namemsg\" class=\"placeholder\"></span>
-                                </div>
-                                <div class=\"form-item\">
-                                    <label for=\"lname\">Surname:</label><br>
-                                    <input type=\"text\" name=\"surname\" id=\"lname\" class=\"login-form\"><br>
-                                    <span id=\"surnamemsg\" class=\"placeholder\"></span>
-                                </div>
-                                <div class=\"form-item\">
-                                    <label for=\"uname\">Username:</label><br>
-                                    <input type=\"text\" name=\"username\" id=\"uname\" class=\"login-form\"><br>
-                                    <span id=\"usernamemsg\" class=\"placeholder\"></span>
-                                </div>
-                                <div class=\"form-item\">
-                                    <label for=\"passw\">Password:</label><br>
-                                    <input type=\"password\" name=\"password\" id=\"passw\" class=\"login-form\"><br>
-                                    <span id=\"passwordmsg\" class=\"placeholder\"></span>
-                                </div>
-                                <div class=\"form-item\">
-                                    <label for=\"repassw\">Repeat password:</label><br>
-                                    <input type=\"password\" name=\"repassword\" id=\"repassw\" class=\"login-form\"><br>
-                                    <span id=\"repasswordmsg\" class=\"placeholder\"></span>
-                                </div>
-                                <div class=\"button-group\">
-                                    <input type=\"submit\" value=\"Register\" name=\"submit\" class=\"form-button\" onclick=\"validate_registration_form(event)\">
-                                    <input type=\"reset\" value=\"Reset\" class=\"form-button\" onclick=\"reset_registration_form()\">
-                                </div>
-                            </form>";
+                              </header>
+                                <form action=\"" . $_SERVER['PHP_SELF'] . "\" method=\"POST\" enctype=\"multipart/form-data\">
+                                    <div class=\"form-item\">
+                                        <label for=\"fname\">Name:</label><br>
+                                        <input type=\"text\" name=\"name\" id=\"fname\" class=\"login-form\"><br>
+                                        <span id=\"namemsg\" class=\"placeholder\"></span>
+                                    </div>
+                                    <div class=\"form-item\">
+                                        <label for=\"lname\">Surname:</label><br>
+                                        <input type=\"text\" name=\"surname\" id=\"lname\" class=\"login-form\"><br>
+                                        <span id=\"surnamemsg\" class=\"placeholder\"></span>
+                                    </div>
+                                    <div class=\"form-item\">
+                                        <label for=\"uname\">Username:</label><br>
+                                        <input type=\"text\" name=\"username\" id=\"uname\" class=\"login-form\"><br>
+                                        <span id=\"usernamemsg\" class=\"placeholder\"></span>
+                                    </div>
+                                    <div class=\"form-item\">
+                                        <label for=\"passw\">Password:</label><br>
+                                        <input type=\"password\" name=\"password\" id=\"passw\" class=\"login-form\"><br>
+                                        <span id=\"passwordmsg\" class=\"placeholder\"></span>
+                                    </div>
+                                    <div class=\"form-item\">
+                                        <label for=\"repassw\">Repeat password:</label><br>
+                                        <input type=\"password\" name=\"repassword\" id=\"repassw\" class=\"login-form\"><br>
+                                        <span id=\"repasswordmsg\" class=\"placeholder\"></span>
+                                    </div>
+                                    <div class=\"button-group\">
+                                        <input type=\"submit\" value=\"Register\" name=\"submit\" class=\"form-button\" onclick=\"validate_registration_form(event)\">
+                                        <input type=\"reset\" value=\"Reset\" class=\"form-button\" onclick=\"reset_registration_form()\">
+                                    </div>
+                                </form>";
                     }
 
                     if (isset($_SESSION['user']) && !isset($_SESSION['message']))
