@@ -7,6 +7,7 @@
             $id = $row["id"];
             $title = $row["title"];
             $image = $row["image"];
+            $category = $row["category"];
 
             $alt_text = ucfirst(str_replace("-"," ", pathinfo($image, PATHINFO_FILENAME)));
 
