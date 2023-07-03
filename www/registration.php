@@ -33,7 +33,7 @@
             }
             else {
 
-                $query = "INSERT INTO users SET name = ?, surname = ?, username = ?, password = ?, level = ?";
+                $query = "INSERT INTO users (name, surname, username, password, level) VALUES (?, ?, ?, ?, ?)";
 
                 if (mysqli_stmt_prepare($stmt, $query)) {
 

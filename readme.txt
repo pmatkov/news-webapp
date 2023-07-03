@@ -2,7 +2,7 @@ PWA - projektni zadatak
 
 Instalacija
 ------------
-- sadrzaj weba nalazi se u mapi 'www'. Navedenu mapu je potrebno staviti u mapu 'xamp/htdocs'. Naslovnica se u tom slucaju otvara upisom adrese http://localhost/www
+- sadrzaj weba nalazi se u mapi 'www'. Navedenu mapu je potrebno staviti u mapu 'xampp/htdocs'. Naslovnica se u tom slucaju otvara upisom adrese http://localhost/www
 - instalacijska skripta za bazu se nalazi u datoteci 'db/pwa_projekt.sql' (baza ima dvije dvije tablice - 'news' i 'users'). Bazu je potrebno uvesti preko web aplikacije phpMyAdmin ili kopiranjem sadrzaja skripte u prostor za unos SQL naredbi i izvrsavanjem skripte
 - u konfiguracijskim postavkama za pristup bazi baza ima naziv: 'pwa_projekt', korisnicko ime je: 'root', a lozinka je '' (podatci se mogu promijeniti u datoteci 'projekt/www/includes/db_utils.php'
 
