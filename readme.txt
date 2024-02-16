@@ -1,26 +1,26 @@
-PWA - projektni zadatak
+## News web app
 
-Instalacija
-------------
-- sadrzaj weba nalazi se u mapi 'www'. Navedenu mapu je potrebno staviti u mapu 'xampp/htdocs'. Naslovnica se u tom slucaju otvara upisom adrese http://localhost/www
-- instalacijska skripta za bazu se nalazi u datoteci 'db/pwa_projekt.sql' (baza ima dvije dvije tablice - 'news' i 'users'). Bazu je potrebno uvesti preko web aplikacije phpMyAdmin ili kopiranjem sadrzaja skripte u prostor za unos SQL naredbi i izvrsavanjem skripte
-- u konfiguracijskim postavkama za pristup bazi baza ima naziv: 'pwa_projekt', korisnicko ime je: 'root', a lozinka je '' (podatci se mogu promijeniti u datoteci 'projekt/www/includes/db_utils.php'
+This is a simple news web app that I made for a class assignment (Programming of Web Applications). The app is built with PHP/MySQL on the backend and HTML/CSS/JavaScript on the frontend. 
 
-Informacije o projektnom zadatku i koristenje aplikacije
-------------
-- prema projektnom zadatku trebalo je napraviti web stranicu/ aplikaciju s vijestima (predlozak "Le monde" prikazuje naslovnicu novinskog portala i clanka)
-- prema navedenom predlosku napravljen je portal znanstvenih novosti "Scientist" (tri kategorije vijesti - "Energy", "Technology" i "Space")
-- na naslovnici se inicijalno prikazuje devet clanaka, tri u svakoj kategoriji
-- u bazu je vec uneseno nekoliko korisnika - prijava u web aplikaciju moze se izvrsiti sa sljedecim podatcima:
-	> user: tom, password: tom12345 (level: 1) - ima ovlast pristupa administrativnom dijelu stranice
-	> user: steve, password: steve12345 (level: 0) - NEMA ovlast pristupa administrativnom dijelu stranice
-- takodjer se moze napraviti registracija novog korisnika. U tom slucaju aplikacija standardno postavlja ovlastenje na razinu 0 koja ne daje administrativni pristup. Za administrativni pristup ovlastenje treba postaviti na razinu 1 u bazi
+The theme of the assignment, the structure, and the technologies used were predefined. The web app is served locally with Apache/MySQL (XAMPP).
 
+![Screenshot from the app](news.png)
 
+**Requirements**
 
+The main requirements for this assignment were:
+- the visitor-oriented part of the app should have three sections: articles dashboard, article details and article categories
+- implement regular and administrative sections of the app
+- implement CRUD operations on news articles
+- implement authentication with session mechanism and hashed passwords
+- implement client-side input validation
+- use parameterized queries on the backend
+- use responsive design
 
+#
+**Try it out (with XAMPP)**
 
-
-
-
-
+- copy the 'www' folder to 'xampp/htdocs'
+- start Apache and MySQL server in XAMPP
+- execute the 'db/pwa_projekt.sql' script to create the database
+- access the web app at http://localhost/www
